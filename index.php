@@ -28,7 +28,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Photoloca</title>
+    <title>AJAX Code Camp</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -112,7 +112,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Photoloca
-                    <small>Machen Sie sich ein Bild davon!</small>
+                    <small>Machen Sie sich ein Bild davon!  </small>
                 </h1>
             </div>
         </div>
@@ -127,7 +127,7 @@
         ?>
             <div class="col-md-4">
                 <a href="location.php?<?php echo $pictureID; ?>">
-                    <img class="img-responsive" src="/img_uploads/<?php echo $pictures['img_src']; ?>" alt="">
+                    <img class="img-responsive" src="img_uploads/<?php echo $pictures['img_src']; ?>" alt="">
                 </a>
                 <h3>
                     <a href="location.php?<?php echo $pictureID; ?>"><?php echo $pictures['title']; ?></a>

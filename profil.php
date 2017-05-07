@@ -222,7 +222,7 @@ $friend_list = get_friend_list($user_id);
         ?>
             <div class="col-md-4">
                 <a href="location.php?<?php echo $pictureID; ?>">
-                    <img class="img-responsive" src="/img_uploads/<?php echo $pictures['img_src']; ?>" alt="">
+                    <img class="img-responsive" src="img_uploads/<?php echo $pictures['img_src']; ?>" alt="">
                 </a>
                 <h3>
                     <a href="location.php?<?php echo $pictureID; ?>"><?php echo $pictures['title']; ?></a>
@@ -251,7 +251,7 @@ $friend_list = get_friend_list($user_id);
       ?>
           <div class="col-md-4">
               <a href="location.php?<?php echo $pictureID; ?>">
-                  <img class="img-responsive" src="/img_uploads/<?php echo $pictures['img_src']; ?>" alt="">
+                  <img class="img-responsive" src="img_uploads/<?php echo $pictures['img_src']; ?>" alt="">
               </a>
               <h3>
                   <a href="location.php?<?php echo $pictureID; ?>"><?php echo $pictures['title']; ?></a>
