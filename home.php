@@ -63,7 +63,7 @@ if ($_FILES['post_img']['name'] != "") {
           echo '<script type="text/javascript">alert("Es hat alles geklappt.");</script>';
           $result = bildupload($uploader, $like_counter, $description, $title, $image_name);
         }else{
-          echo "Sorry, aber irgendetwas hat nicht funktioniert. Versuchen Sie es doch einfach noch einmal";
+          echo "Sorry!!!! aber irgendetwas hat nicht funktioniert. Versuchen Sie es doch einfach noch einmal";
         }
      }
 
@@ -233,7 +233,7 @@ if ($_FILES['post_img']['name'] != "") {
           ?>
               <div class="col-md-4">
                   <a href="location.php?<?php echo $pictureID; ?>">
-                      <img class="img-responsive" src="/img_uploads/<?php echo $pictures['img_src']; ?>" alt="">
+                      <img class="img-responsive" src="img_uploads/<?php echo $pictures['img_src']; ?>" alt="">
                   </a>
                   <h3>
                       <a href="location.php?<?php echo $pictureID; ?>"><?php echo $pictures['title']; ?></a>

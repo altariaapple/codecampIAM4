@@ -46,7 +46,7 @@
  /* ----------------------- */
 
  function get_all_pictures(){
-   $sql = "SELECT * FROM picture ORDER BY timestamp DESC" ;
+   $sql = "SELECT * FROM picture" ;
    return get_result($sql);
  }
 
