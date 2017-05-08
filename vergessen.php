@@ -11,32 +11,17 @@
   $success_msg = "";
 
   if(isset($_POST['mail-submit'])){
-    if(!empty($_POST['username']) && !empty($_POST['password'])){
+    if(!empty($_POST['email']){
 
-      $username = filter_inputs($_POST['username']);
-      $password = filter_inputs($_POST['password']);
+      $username = filter_inputs($_POST['email']);
 
-      $result = login($username, $password);
-
-  		$row_count = mysqli_num_rows($result);
-      if( $row_count == 1){
-        session_start();
-        $user = mysqli_fetch_assoc($result);
-        $_SESSION['userid'] = $user['user_id'];
-        header("Location:home.php");
       }
       else{
         $error = true;
-        $error_msg .= "Benutzerdaten konnten nicht gefunden werden.</br>";
+        $error_msg .= "Bitte füllen Sie das Feld aus.</br>";
       }
     }
-    else{
-      $error = true;
-      $error_msg .= "Bitte füllen Sie das Feld aus.</br>";
-    }
-  }
-
-
+  
   if(isset($_POST['register-submit'])){
   // Kontrolle mit isset, ob email und password ausgefüllt wurde
   if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['confirm-password'])){
@@ -142,15 +127,14 @@
                   <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
                 </div>
                 <div class="form-group">
-                <div class="row">
-                  <div class="col-sm-6 col-sm-offset-3">
-                    <input type="submit" name="mail-submit" id="mail-submit" tabindex="3" class="form-control btn btn-register" value="Passwort zurücksetzen">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="mail-submit" id="mail-submit" tabindex="3" class="form-control btn btn-register" value="Passwort zurücksetzen">
+                    </div>
                   </div>
                 </div>
-              </div>
               </form>
               <!-- /login form  -->
-            </div>
             </div>
           </div>
           <!-- /.row -->
@@ -158,8 +142,6 @@
           <div class="status"></div>
 
         <hr>
-
-      <div>
         <!-- Footer -->
         <footer>
             <div class="row">
