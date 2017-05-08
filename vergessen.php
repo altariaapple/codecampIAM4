@@ -10,7 +10,7 @@
   $success = false;
   $success_msg = "";
 
-  if(isset($_POST['login-submit'])){
+  if(isset($_POST['mail-submit'])){
     if(!empty($_POST['username']) && !empty($_POST['password'])){
 
       $username = filter_inputs($_POST['username']);
@@ -32,7 +32,7 @@
     }
     else{
       $error = true;
-      $error_msg .= "Bitte füllen Sie beide Felder aus.</br>";
+      $error_msg .= "Bitte füllen Sie das Feld aus.</br>";
     }
   }
 
@@ -132,71 +132,25 @@
         <div class="row">
             <div class="col-lg-6">
               <!--  login form -->
-              <h3>Login</h3>
+                <h3>Passwort vergessen</h3>
+                <h5> Hier kannst du dein Passwort ändern. Gib zunächst deine Email Adresse an.</h5>
+
+
               <form id="login-form" action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post" role="form">
                 <div class="form-group">
-                  <h5>Benutzername</h5>
-                  <input type="text" name="username" id="email" tabindex="1" class="form-control" placeholder="Benutzername" value="">
-                </div>
-                <div class="form-group">
-                  <h5>Passwort</h5>
-                  <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Passwort">
+                  <h6>Email</h6>
+                  <input type="email" name="username" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
                 </div>
                 <div class="form-group">
                 <div class="row">
                   <div class="col-sm-6 col-sm-offset-3">
-                    <input type="submit" name="login-submit" id="login-submit" tabindex="3" class="form-control btn btn-register" value="login">
+                    <input type="submit" name="mail-submit" id="mail-submit" tabindex="3" class="form-control btn btn-register" value="Passwort zurücksetzen">
                   </div>
                 </div>
               </div>
               </form>
               <!-- /login form  -->
             </div>
-
-            <div class="col-lg-6">
-              <!-- register form -->
-              <h3>Registration</h3>
-              <form id="register-form" action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post" role="form">
-                <h5>Benutzername</h5>
-                <div class="form-group">
-                  <input type="text" name="username" id="username" tabindex="4" class="form-control" placeholder="Benutzername" value="" required>
-                </div>
-
-                <h5>E-Mail</h5>
-                <div class="form-group">
-                  <input type="email" name="email" id="email" tabindex="5" class="form-control" placeholder="E-Mail-Adresse" value="" required>
-                </div>
-
-                <h5>Vorname</h5>
-                <div class="form-group">
-                  <input type="text" name="firstname" id="email" tabindex="6" class="form-control" placeholder="Vorname" value="" required>
-                </div>
-
-                <h5>Nachname</h5>
-                <div class="form-group">
-                  <input type="text" name="lastname" id="email" tabindex="7" class="form-control" placeholder="Nachname" value="" required>
-                </div>
-
-                <h5>Passwort</h5>
-                <div class="form-group">
-                  <input type="password" name="password" id="password" tabindex="8" class="form-control" placeholder="Passwort" required>
-                </div>
-
-                <h5>Passwort bestätigen</h5>
-                <div class="form-group">
-                  <input type="password" name="confirm-password" id="confirm-password" tabindex="9" class="form-control" placeholder="Passwort bestätigen" required>
-                </div>
-
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3">
-                      <input type="submit" name="register-submit" id="register-submit" tabindex="10" class="form-control btn btn-register" value="Registrieren" required>
-                    </div>
-                  </div>
-                </div>
-
-              </form>
-              <!-- /register form -->
             </div>
           </div>
           <!-- /.row -->
@@ -217,11 +171,12 @@
 
         <hr>
 
+      <div>
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Photoloca 2016</p>
+                    <p>Copyright &copy; Photoloca 2017</p>
                 </div>
             </div>
             <!-- /.row -->
