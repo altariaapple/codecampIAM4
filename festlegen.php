@@ -77,7 +77,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AJAX Code Camp</title>
+    <title>Photoloca</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -116,7 +116,7 @@
                         <a href="index.php">Finde Locations</a>
                     </li>
                     <li>
-                        <a href="login.php">Login / Registrierung</a>
+                        <a href="login.php">Login / Registration</a>
                     </li>
                 </ul>
             </div>
@@ -131,75 +131,31 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-6">
-              <!--  login form -->
-              <h3>Login</h3>
+              <!--  Neues Passwort festlegen form -->
+              <h3>Neues Passwort festlegen</h3>
               <form id="login-form" action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post" role="form">
                 <div class="form-group">
-                  <h5>Benutzername</h5>
-                  <input type="text" name="username" id="email" tabindex="1" class="form-control" placeholder="Benutzername" value="">
+                  <h5>Neues Passwort</h5>
+                  <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Neues Passwort" value="">
                 </div>
                 <div class="form-group">
-                  <h5>Passwort</h5>
-                  <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Passwort">
-                </div>
-                <div class="form-group">
-                  <a href="vergessen.php">Passwort vergessen?</a>
+                  <h5>Passwort bestätigen</h5>
+                  <input type="password" name="password2" id="password2" tabindex="2" class="form-control" placeholder="Passwort bestätigen">
                 </div>
                 <div class="form-group">
                 <div class="row">
                   <div class="col-sm-6 col-sm-offset-3">
-                    <input type="submit" name="login-submit" id="login-submit" tabindex="3" class="form-control btn btn-register" value="login">
+                    <input type="submit" name="password-submit" id="password-submit" tabindex="3" class="form-control btn btn-register" value="Neues Passwort speichern">
                   </div>
                 </div>
               </div>
               </form>
-              <!-- /login form  -->
-            </div>
+              <!-- /Neues Passwort festlegen  -->
 
-            <div class="col-lg-6">
-              <!-- register form -->
-              <h3>Registration</h3>
-              <form id="register-form" action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post" role="form">
-                <h5>Benutzername</h5>
-                <div class="form-group">
-                  <input type="text" name="username" id="username" tabindex="4" class="form-control" placeholder="Benutzername" value="" required>
-                </div>
+              <!-- Fehlermeldung: Die PW stimmen nicht überein -->
 
-                <h5>E-Mail</h5>
-                <div class="form-group">
-                  <input type="email" name="email" id="email" tabindex="5" class="form-control" placeholder="E-Mail-Adresse" value="" required>
-                </div>
+              <!-- /Fehlermeldung: Die PW stimmen nicht überein -->
 
-                <h5>Vorname</h5>
-                <div class="form-group">
-                  <input type="text" name="firstname" id="email" tabindex="6" class="form-control" placeholder="Vorname" value="" required>
-                </div>
-
-                <h5>Nachname</h5>
-                <div class="form-group">
-                  <input type="text" name="lastname" id="email" tabindex="7" class="form-control" placeholder="Nachname" value="" required>
-                </div>
-
-                <h5>Passwort</h5>
-                <div class="form-group">
-                  <input type="password" name="password" id="password" tabindex="8" class="form-control" placeholder="Passwort" required>
-                </div>
-
-                <h5>Passwort bestätigen</h5>
-                <div class="form-group">
-                  <input type="password" name="confirm-password" id="confirm-password" tabindex="9" class="form-control" placeholder="Passwort bestätigen" required>
-                </div>
-
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3">
-                      <input type="submit" name="register-submit" id="register-submit" tabindex="10" class="form-control btn btn-register" value="Registrieren" required>
-                    </div>
-                  </div>
-                </div>
-
-              </form>
-              <!-- /register form -->
             </div>
           </div>
           <!-- /.row -->
