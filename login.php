@@ -77,7 +77,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AJAX Code Camp</title>
+    <title>Photoloca</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -141,9 +141,6 @@
                 <div class="form-group">
                   <h5>Passwort</h5>
                   <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Passwort">
-                </div>
-                <div class="form-group">
-                  <a href="vergessen.php">Passwort vergessen?</a>
                 </div>
                 <div class="form-group">
                 <div class="row">
@@ -224,7 +221,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Photoloca 2017</p>
+                    <p>Copyright &copy; Photoloca 2016</p>
                 </div>
             </div>
             <!-- /.row -->
