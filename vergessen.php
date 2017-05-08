@@ -139,7 +139,7 @@
               <form id="login-form" action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post" role="form">
                 <div class="form-group">
                   <h6>Email</h6>
-                  <input type="email" name="username" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+                  <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
                 </div>
                 <div class="form-group">
                 <div class="row">
@@ -154,20 +154,8 @@
             </div>
           </div>
           <!-- /.row -->
-            <?php
-              // Gibt es einen Erfolg zu vermelden?
-              if($success == true){
-            ?>
-                <div class="alert alert-success" role="alert"><?php echo $success_msg; ?></div>
-            <?php
-              }   // schliessen von if($success == true)
-              // Gibt es einen Fehler?
-              if($error == true){
-            ?>
-                <div class="alert alert-danger" role="alert"><?php echo $error_msg; ?></div>
-            <?php
-              }   // schliessen von if($success == true)
-            ?>
+
+          <div class="status"></div>
 
         <hr>
 
@@ -193,6 +181,33 @@
 
     <!-- functions.js -->
     <script src="js/functions.js"></script>
+
+    <script>
+      function change_view(show_status){
+        console.log(show_status);
+        html = $.parseHTML(show_status);
+        $(html).hide().appendTo(".status").show(200);
+
+      }
+
+      function check_mail(){
+
+        var request = $.ajax({
+          url:"ajax/ajax_check_mail.php",
+          method:"POST",
+          dataType:"html",
+          success:function(data_from_script){
+            change_view(data_from_script);
+          }
+        })
+      }
+
+
+      $("#mail-submit").click(function(){
+      console.log("button wurde geklickt");
+      })
+
+    </script>
 
 </body>
 
