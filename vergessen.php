@@ -10,46 +10,46 @@
   $success = false;
   $success_msg = "";
 
-  if(isset($_POST['mail-submit'])){
-    if(!empty($_POST['email']){
+  // if(isset($_POST['mail-submit'])){
+  //   if(!empty($_POST['email'])){
+  //
+  //     $username = filter_inputs($_POST['email']);
+  //
+  //     }
+  //     else{
+  //       $error = true;
+  //       $error_msg .= "Bitte füllen Sie das Feld aus.</br>";
+  //     }
+  //   }
 
-      $username = filter_inputs($_POST['email']);
-
-      }
-      else{
-        $error = true;
-        $error_msg .= "Bitte füllen Sie das Feld aus.</br>";
-      }
-    }
-  
-  if(isset($_POST['register-submit'])){
-  // Kontrolle mit isset, ob email und password ausgefüllt wurde
-  if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['confirm-password'])){
-
-    // Werte aus POST-Array auf SQL-Injections prüfen und in Variablen schreiben
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm-password'];
-    if($password == $confirm_password){
-      // register liefert bei erfolgreichem Eintrag in die DB den Wert TRUE zurück, andernfalls FALSE
-      $result = register($username, $email, $firstname, $lastname, $password);
-      if($result){
-        $success = true;
-        $success_msg = "Ihre Registrierung war erfolgreich.</br>
-        Sie können sich nun einloggen.</br>";
-      }else{
-        $error = true;
-        $error_msg .= "Es gibt ein Problem mit der Datenbankverbindung.</br>";
-      }
-    }else{
-      $error = true;
-      $error_msg .= "Die Passwörter stimmen nicht überein.</br>";
-    }
-  }
-}
+//   if(isset($_POST['register-submit'])){
+//   // Kontrolle mit isset, ob email und password ausgefüllt wurde
+//   if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['confirm-password'])){
+//
+//     // Werte aus POST-Array auf SQL-Injections prüfen und in Variablen schreiben
+//     $username = $_POST['username'];
+//     $email = $_POST['email'];
+//     $firstname = $_POST['firstname'];
+//     $lastname = $_POST['lastname'];
+//     $password = $_POST['password'];
+//     $confirm_password = $_POST['confirm-password'];
+//     if($password == $confirm_password){
+//       // register liefert bei erfolgreichem Eintrag in die DB den Wert TRUE zurück, andernfalls FALSE
+//       $result = register($username, $email, $firstname, $lastname, $password);
+//       if($result){
+//         $success = true;
+//         $success_msg = "Ihre Registrierung war erfolgreich.</br>
+//         Sie können sich nun einloggen.</br>";
+//       }else{
+//         $error = true;
+//         $error_msg .= "Es gibt ein Problem mit der Datenbankverbindung.</br>";
+//       }
+//     }else{
+//       $error = true;
+//       $error_msg .= "Die Passwörter stimmen nicht überein.</br>";
+//     }
+//   }
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -121,7 +121,7 @@
                 <h5> Hier kannst du dein Passwort ändern. Gib zunächst deine Email Adresse an.</h5>
 
 
-              <form id="login-form" action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post" role="form">
+              <form action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post">
                 <div class="form-group">
                   <h6>Email</h6>
                   <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
@@ -129,7 +129,7 @@
                 <div class="form-group">
                   <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
-                      <input type="submit" name="mail-submit" id="mail-submit" tabindex="3" class="form-control btn btn-register" value="Passwort zurücksetzen">
+                      <input type="submit" name="mail-submit" class="mail-submit" tabindex="3" value="Passwort zurücksetzen">
                     </div>
                   </div>
                 </div>
@@ -167,16 +167,19 @@
     <script>
       function change_view(show_status){
         console.log(show_status);
-        html = $.parseHTML(show_status);
-        $(html).hide().appendTo(".status").show(200);
-
+        $('.alert').remove();
+        //html = $.parseHTML(show_status);
+        $(show_status).hide().appendTo(".status").show(200);
       }
 
       function check_mail(){
+        var mail = $("input#email").val();
+        var send_data = {email: mail}
 
         var request = $.ajax({
           url:"ajax/ajax_check_mail.php",
-          method:"POST",
+          method:"GET",
+          data:send_data,
           dataType:"html",
           success:function(data_from_script){
             change_view(data_from_script);
@@ -185,8 +188,9 @@
       }
 
 
-      $("#mail-submit").click(function(){
-      console.log("button wurde geklickt");
+      $(".mail-submit").click(function(e){
+        e.preventDefault();
+        check_mail();
       })
 
     </script>
