@@ -11,32 +11,17 @@
   $success_msg = "";
 
   if(isset($_POST['mail-submit'])){
-    if(!empty($_POST['username']) && !empty($_POST['password'])){
+    if(!empty($_POST['email']){
 
-      $username = filter_inputs($_POST['username']);
-      $password = filter_inputs($_POST['password']);
+      $username = filter_inputs($_POST['email']);
 
-      $result = login($username, $password);
-
-  		$row_count = mysqli_num_rows($result);
-      if( $row_count == 1){
-        session_start();
-        $user = mysqli_fetch_assoc($result);
-        $_SESSION['userid'] = $user['user_id'];
-        header("Location:home.php");
       }
       else{
         $error = true;
-        $error_msg .= "Benutzerdaten konnten nicht gefunden werden.</br>";
+        $error_msg .= "Bitte füllen Sie das Feld aus.</br>";
       }
     }
-    else{
-      $error = true;
-      $error_msg .= "Bitte füllen Sie das Feld aus.</br>";
-    }
-  }
-
-
+  
   if(isset($_POST['register-submit'])){
   // Kontrolle mit isset, ob email und password ausgefüllt wurde
   if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['confirm-password'])){
@@ -139,7 +124,7 @@
               <form id="login-form" action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post" role="form">
                 <div class="form-group">
                   <h6>Email</h6>
-                  <input type="email" name="username" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+                  <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
                 </div>
                 <div class="form-group">
                 <div class="row">
