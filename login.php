@@ -116,7 +116,7 @@
                         <a href="index.php">Finde Locations</a>
                     </li>
                     <li>
-                        <a href="login.php">Login / Registration</a>
+                        <a href="login.php">Login / Registrierung</a>
                     </li>
                 </ul>
             </div>
