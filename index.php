@@ -147,7 +147,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Photoloca 2016</p>
+                    <p>Copyright &copy; Photoloca 2017</p>
                 </div>
             </div>
             <!-- /.row -->
