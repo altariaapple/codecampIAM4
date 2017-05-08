@@ -142,15 +142,14 @@
                   <input type="email" name="username" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
                 </div>
                 <div class="form-group">
-                <div class="row">
-                  <div class="col-sm-6 col-sm-offset-3">
-                    <input type="submit" name="mail-submit" id="mail-submit" tabindex="3" class="form-control btn btn-register" value="Passwort zurücksetzen">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="mail-submit" id="mail-submit" tabindex="3" class="form-control btn btn-register" value="Passwort zurücksetzen">
+                    </div>
                   </div>
                 </div>
-              </div>
               </form>
               <!-- /login form  -->
-            </div>
             </div>
           </div>
           <!-- /.row -->
@@ -170,8 +169,6 @@
             ?>
 
         <hr>
-
-      <div>
         <!-- Footer -->
         <footer>
             <div class="row">
