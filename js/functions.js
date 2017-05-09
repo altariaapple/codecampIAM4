@@ -81,7 +81,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 
-
+//Passwort Prüfer: 
+////bootsnipp.com/snippets/d31WZ
 ! function(n) {
 var r = {},
     n, u, t, i, f;
