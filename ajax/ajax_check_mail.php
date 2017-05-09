@@ -1,6 +1,7 @@
 <?php
   require_once("../system/data.php");
 
+  // mit $_GET wird der genannte Key geholt
   $result = checkmail_db($_GET["email"]);
   $row_count = mysqli_num_rows($result);
     if($row_count == 1){

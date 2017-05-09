@@ -177,10 +177,14 @@
         var send_data = {email: mail}
 
         var request = $.ajax({
+          //dieses script wird aufgerufen
           url:"ajax/ajax_check_mail.php",
+          //default ist GET
           method:"GET",
+          //objekt mit bezeichner (key) & wert (value) wird gesendet
           data:send_data,
           dataType:"html",
+          //data from script beinhaltet den rückgabewert des ausgeführten scripts
           success:function(data_from_script){
             change_view(data_from_script);
           }
