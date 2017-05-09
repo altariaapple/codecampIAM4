@@ -81,6 +81,17 @@
 
 /* ----------------------------------------------------------------------------- */
 
+
+/* ---- festlegen.php ---- */
+/* ----------------------- */
+function update_new_pw($password,$user_id){
+  $sql = "UPDATE user SET password = '$password' WHERE user_id = '$user_id'";
+  return get_result($sql);
+}
+
+
+/* ----------------------------------------------------------------------------- */
+
   /* ---- location.php ---- */
   /* ----------------------- */
   function get_certain_picture($picID){
