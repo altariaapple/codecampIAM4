@@ -180,7 +180,7 @@
           //dieses script wird aufgerufen
           url:"ajax/ajax_check_mail.php",
           //default ist GET
-          method:"GET",
+          method:"POST",
           //objekt mit bezeichner (key) & wert (value) wird gesendet
           data:send_data,
           dataType:"html",

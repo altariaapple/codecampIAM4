@@ -2,7 +2,7 @@
   require_once("../system/data.php");
 
   // mit $_GET wird der genannte Key geholt
-  $result = update_new_pw($_GET["password"],$_GET['user_id']);
+  $result = update_new_pw($_POST["password"],$_POST['user_id']);
 
   if($result){
 ?>

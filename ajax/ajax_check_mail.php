@@ -2,7 +2,7 @@
   require_once("../system/data.php");
 
   // mit $_GET wird der genannte Key geholt
-  $result = checkmail_db($_GET["email"]);
+  $result = checkmail_db($_POST["email"]);
   $row_count = mysqli_num_rows($result);
     if($row_count == 1){
       $userinfo = mysqli_fetch_assoc($result);
