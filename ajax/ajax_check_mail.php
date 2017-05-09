@@ -10,7 +10,7 @@
       <div class="alert alert-success" role="alert">
         Klicke auf den Link, um das Passwort zurück zu setzen:
         <br>
-        <a href="festlegen.php?user=<?php echo $userinfo['user_id'] ?>">www.photoloca.ch/passwordreset</a>
+        <a href="festlegen.php?user=<?php echo $userinfo['user_id']; ?>">www.photoloca.ch/passwordreset</a>
       </div>
 <?php
     }

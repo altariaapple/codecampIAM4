@@ -226,13 +226,13 @@
       var new_password = $("input#new_Password").val();
       var new_password_confirm = $("input#password_confirm").val();
 
-console.log(new_password.length);
+        console.log(new_password.length);
 
-if(new_password.length < 6){
-    $('.alert').remove();
-    var status = '<div class="alert alert-danger" role="alert">Das Paswort mindestens 6 Zeichen enthalten.</div>';
-    $(status).hide().appendTo(".status").show(200);
-}
+      if(new_password.length < 6){
+          $('.alert').remove();
+          var status = '<div class="alert alert-danger" role="alert">Das Paswort mindestens 6 Zeichen enthalten.</div>';
+          $(status).hide().appendTo(".status").show(200);
+      }
       else if(new_password != new_password_confirm){
         $('.alert').remove();
         var status = '<div class="alert alert-danger" role="alert">Die Passwörter stimmen nicht überein.</div>';
