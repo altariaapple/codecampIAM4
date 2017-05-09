@@ -174,7 +174,7 @@
 
       function check_mail(){
         var mail = $("input#email").val();
-        var send_data = {email: mail}
+        var send_data = {email: mail}  //{Bezeichner:Wert} aus Variable
 
         var request = $.ajax({
           //dieses script wird aufgerufen

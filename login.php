@@ -131,6 +131,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-6">
+
               <!--  login form -->
               <h3>Login</h3>
               <form id="login-form" action="<?PHP echo $_SERVER['PHP_SELF'] ?>" method="post" role="form">
