@@ -63,7 +63,8 @@ $(document).ready(function() {
 /* festlegen.php */
 /* ---------------------- */
 
-// URL parameter bekommen
+// URL Parameter bekommen
+// Quelle: http://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
